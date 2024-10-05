@@ -19,9 +19,10 @@ Program to handle and view details of all uncaught exceptions in android applica
 
 ## SCREENSHOTS
 
-|  |  |
-|--|--|
-|![img](./img/screenshot.png)|![img](./img/screenshotx.png)|
+<div style="overflow-x: auto; white-space: nowrap; text-align: center;">
+  <img src="./img/screenshot.png" width="300" height="600" style="margin: 5px;">
+  <img src="./img/screenshotx.png" width="300" height="600" style="margin: 5px;">
+</div>
 
 ## DOWNLOADS
 
