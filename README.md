@@ -1,70 +1,62 @@
-# ANDROID APP EXCEPTIONS HANDLER
+## EH
 
-Program to handle and view details of all uncaught exceptions in android applications. An easy way to handle, view, share, and report app crashes quickly on android, with or without any prior developer knowledge.
+User friendly tool to handle and view details of all uncaught exceptions in android applications. An easy way to handle, view, share, and report app crashes quickly on android, with or without any prior developer knowledge.
 
-## FEATURES
+### FEATURES
 
-* Instantly view, share, copy or save crash log.
-* Detailed information in crash log.
-* Include developer emails when sending crash log.
-* User friendly.
+- Instantly view crash log
+- Share crash log.
+- Copy crash log.
+- Save crash log.
+- User friendly.
+- Detailed information in crash log.
+- Add developer emails added to the **Intent** when sending crash log to developers.
 
-## CRASH LOG INFORMATION
+### CRASH LOG INFO
 
-* Device Information
-* App Information
-* Crash date and time
-* Activity lifecycle traces
-* Stack trace with suppressed exceptions
+- Device Information
+- App Information
+- Crash date and time
+- Activity lifecycle traces
+- Stack trace with suppressed exceptions
 
-## SCREENSHOTS
+### SCREENSHOTS
 
 <div style="overflow-x: auto; white-space: nowrap; text-align: center;">
-  <img src="./img/screenshot.png" width="300" height="600" style="margin: 5px;">
-  <img src="./img/screenshotx.png" width="300" height="600" style="margin: 5px;">
+    <img src="./img/screenshot.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
+    <img src="./img/screenshotx.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
 </div>
 
-## DOWNLOADS
+You can download the test apk used above from [here](https://github.com/jorexdeveloper/EH/raw/root/test/EHTest-1.0.apk).
 
-|Ext       |Size      |Link      |
-|----------|----------|----------|
-|ZIP       |285.60KB  |[EH-1.0.zip](https://github.com/jorexdeveloper/EH/archive/v1.0.zip)|
-|TAR.GZ    |277.44KB  |[EH-1.0.tar.gz](https://github.com/jorexdeveloper/EH/archive/v1.0.tar.gz)|
+### INSTALLATION
 
-You can also download the test apk from below.
+All you have to do is download and extract the zip, then follow the steps below to add the library to your project.
 
-|Ext       |Size      |Link      |
-|----------|----------|----------|
-|APK       |22.0KB    |[EHTest-1.0.apk](https://github.com/jorexdeveloper/EH/raw/root/test/EHTest-1.0.apk)|
-
-## INSTALLATION
-
-All you have to do is download and extract the zip (from above), then follow the below steps to add the library to your project.
-
-Extract the zip and copy the folder **EH-1.0** to your project's **libs** directory (`.../YourProject/app/libs`), then add the library as a dependency in your application/module `build.gradle` file (`.../YourProject/app/build.gradle`).
+Extract the zip and copy the folder **EH** (or **EH-[version]**) to your project's **libs** directory (`.../YourProject/app/libs`), then add the library as a dependency in your application/module `build.gradle` file (`.../YourProject/app/build.gradle`).
 
 ```groovy
 dependencies {
-  api project(':app:libs:EH-1.0:eh')
+    // import the project
+    api project(':app:libs:EH:eh')
 }
 ```
 
-## USAGE
+### USAGE
 
 Initialize **EH** in your **Application** with a new **EH.Builder** instance, passing to it the application **Context**...
 
 ```java
 // import the class
-
-import com.cyberking.developer.eh.EH;
+import com.jorexdeveloper.eh.EH;
 
 public class MyApplication extends Application {
 
     @Override
     public void onCreate () {
 
-        // Create new Builder instance passing to it the application context
-
+        // Create new Builder instance passing to
+        // it the application context
         new EH.Builder (this)
             .init (); // Initialize EH
 
@@ -77,16 +69,15 @@ or in **Activity** as...
 
 ```java
 // import the class
-
-import com.cyberking.developer.eh.EH;
+import com.jorexdeveloper.eh.EH;
 
 public class MyActivity extends Activity {
 
     @Override
     public void onCreate (Bundle savedInstanceState) {
 
-        // Create new Builder instance passing to it the application context
-
+        // Create new Builder instance passing to
+        // it the application context
         new EH.Builder (getApplicationContext ())
             .init (); // Initialize EH
 
@@ -95,84 +86,83 @@ public class MyActivity extends Activity {
 }
 ```
 
-## CONSTRUCTORS
+### CONSTRUCTOR
 
 ```java
 public EH.Builder (Context appContext)
 ```
 
-## METHODS
+### METHODS
 
 Use these methods to set configurations for **EH** before call to `init ()`.
 
 ```java
 public EH.Builder enable (boolean enable)
 ```
+
 > Default Value : true
 
 Enable/disable **EH**. If disabled, exceptions are forwarded to the **Default Uncaught Exception Handler** that was present before call to `init ()`.
 
-
 ```java
 public EH.Builder runInBackground (boolean runInBackground)
 ```
+
 > Default Value : true
 
 Whether **EH** should run when app is stopped i.e after call to `onStop ()`.
 
-
 ```java
 public EH.Builder addSuppressed (boolean add)
 ```
+
 > Default Value : true
 
 Whether to include suppressed exceptions in the crash log.
 
-
 ```java
 public EH.Builder setMaxActivityLogs (int max)
 ```
+
 > Default Value : 100
 
 Set the maximum number of activity lifecycle logs/traces to include in the crash log. The last **max** logs are included in the log.
 
-
 ```java
 public EH.Builder setMaxStackTraceSize (int size)
 ```
+
 > Default Value : 100
 
 Set the maximum number of stack traces to include in the crash log. The first **size** stack traces are included in the log.
 
-
 ```java
 public EH.Builder addEmailAddresses (String... emailAddresses)
 ```
+
 > Default Value : none
 
 Add email addresses included in the **Intent** used to forward/send crash log to developers.
 
-
 ```java
 public void init ()
 ```
+
 Initialize/set up **EH** with the configurations above.
 
 **Tip :** You can change the configurations for **EH** after call to `init ()` by creating a new **EH.Builder** instance or use the old one, then initializing it with the new configurations and making another call to `init ()`.
 
-
-## EXAMPLES
+### EXAMPLE
 
 ```java
 // import the class
-
-import com.cyberking.developer.eh.EH;
+import com.jorexdeveloper.eh.EH;
 
 public class MyApplication extends Application {
     @Override public void onCreate() {
-    
-    // Create new Builder passing application context, then setting configurations and initializing EH
-    
+
+    // Create new Builder passing application context,
+    // then setting configurations and initializing EH
     new EH.Builder (this)
         .enable (true)
         .runInBackground (true)
@@ -184,9 +174,9 @@ public class MyApplication extends Application {
 }
 ```
 
-**NOTE : DO NOT FORGET TO MAKE A CALL TO THE METHOD `init ()` OR *EH* WILL NOT RUN AND YOUR APPLICATIONS WILL CRASH NORMALLY.**
+**CAUTION : DO NOT FORGET** to make a call to the method `init ()` or **EH** will not run and your applications will crash normally.
 
-## LICENSE
+#### LICENSE
 
 ```
     Copyright © 2021 Jore

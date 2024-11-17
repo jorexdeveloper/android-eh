@@ -5,21 +5,18 @@
 	android:layout_height="match_parent"
 	android:gravity="center"
 	android:orientation="vertical">
-
 	<TextView
-		android:text="Crash the application to start EH"
+		android:text="Crash the application to test crash handler."
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center"
 		android:padding="32dp"
 		android:textAppearance="?android:attr/textAppearanceLarge"/>
-
 	<Button
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="CRASH APPLICATION"
+		android:text="TEST CRASH HANDLER"
 		android:layout_margin="32dp"
 		android:onClick="onCrashButtonClick"/>
-
 </LinearLayout>
 
