@@ -2,12 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	package="com.jorexdeveloper.eh"
 	android:versionCode="1"
-	android:versionName="1.0" >
+	android:versionName="1.0">
+
 	<uses-sdk
 		android:minSdkVersion="19"
 		android:targetSdkVersion="28" />
-	<!--                      EH
-	Copyright © 2021 Jore
+	<!--Copyright © 2021 Jore
 
 	Licensed under the Apache License, Version 2.0 (the "License");
 	you may not use this file except in compliance with the License.
@@ -20,11 +20,11 @@
 	WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 	See the License for the specific language governing permissions and
 	limitations under the License.-->
-	
+
 	<application>
 		<activity
 			android:name="com.jorexdeveloper.eh.EHActivity"
 			android:label="@string/activity_eh_name"
-			android:process=":error_activity"/>
+			android:process=":error_activity" />
 	</application>
 </manifest>

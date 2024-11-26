@@ -23,8 +23,8 @@ User friendly tool to handle and view details of all uncaught exceptions in andr
 ### SCREENSHOTS
 
 <div style="overflow-x: auto; white-space: nowrap; text-align: center;">
-    <img src="./img/screenshot.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
-    <img src="./img/screenshotx.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
+	<img src="./img/screenshot.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
+	<img src="./img/screenshotx.png" width="300" height="600" style="margin: 5px;" alt="image could not be loaded" style="color:red;background-color:black;font-weight:bold">
 </div>
 
 You can download the test apk used above from [here](https://github.com/jorexdeveloper/EH/raw/root/test/EHTest-1.0.apk).
@@ -37,8 +37,8 @@ Extract the zip and copy the folder **EH** (or **EH-[version]**) to your project
 
 ```groovy
 dependencies {
-    // import the project
-    api project(':app:libs:EH:eh')
+	// import the project
+	api project(':app:libs:EH:eh')
 }
 ```
 
@@ -52,16 +52,16 @@ import com.jorexdeveloper.eh.EH;
 
 public class MyApplication extends Application {
 
-    @Override
-    public void onCreate () {
+	@Override
+	public void onCreate () {
 
-        // Create new Builder instance passing to
-        // it the application context
-        new EH.Builder (this)
-            .init (); // Initialize EH
+		// Create new Builder instance passing to
+		// it the application context
+		new EH.Builder (this)
+			.init (); // Initialize EH
 
-        super.onCreate ();
-    }
+		super.onCreate ();
+	}
 }
 ```
 
@@ -73,16 +73,16 @@ import com.jorexdeveloper.eh.EH;
 
 public class MyActivity extends Activity {
 
-    @Override
-    public void onCreate (Bundle savedInstanceState) {
+	@Override
+	public void onCreate (Bundle savedInstanceState) {
 
-        // Create new Builder instance passing to
-        // it the application context
-        new EH.Builder (getApplicationContext ())
-            .init (); // Initialize EH
+		// Create new Builder instance passing to
+		// it the application context
+		new EH.Builder (getApplicationContext ())
+			.init (); // Initialize EH
 
-        super.onCreate (savedInstanceState);
-    }
+		super.onCreate (savedInstanceState);
+	}
 }
 ```
 
@@ -159,18 +159,18 @@ Initialize/set up **EH** with the configurations above.
 import com.jorexdeveloper.eh.EH;
 
 public class MyApplication extends Application {
-    @Override public void onCreate() {
+	@Override public void onCreate() {
 
-    // Create new Builder passing application context,
-    // then setting configurations and initializing EH
-    new EH.Builder (this)
-        .enable (true)
-        .runInBackground (true)
-        .setMaxActivityLogs (50)
-        .setMaxStackTraceSize (50)
-        .addEmailAddresses ("email0@gmail.com", "email1@gmail.com", "email2@gmail.com")
-        .init ();
-    }
+	// Create new Builder passing application context,
+	// then setting configurations and initializing EH
+	new EH.Builder (this)
+		.enable (true)
+		.runInBackground (true)
+		.setMaxActivityLogs (50)
+		.setMaxStackTraceSize (50)
+		.addEmailAddresses ("email0@gmail.com", "email1@gmail.com", "email2@gmail.com")
+		.init ();
+	}
 }
 ```
 
@@ -179,13 +179,13 @@ public class MyApplication extends Application {
 #### LICENSE
 
 ```
-    Copyright © 2021 Jore
+	Copyright © 2021 Jore
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
 You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+	http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
