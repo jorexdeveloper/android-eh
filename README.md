@@ -1,4 +1,19 @@
-## EH
+<h1 align="center">ANDROID EH</h1>
+
+<p align="center">
+	<a href="https://github.com/jorexdeveloper/android-eh/stargazers">
+		<img
+			src="https://img.shields.io/github/stars/jorexdeveloper/android-eh?colorA=23272a&colorB=007bff&style=for-the-badge">
+	</a>
+	<a href="https://github.com/jorexdeveloper/android-eh/issues">
+		<img
+			src="https://img.shields.io/github/issues/jorexdeveloper/android-eh?colorA=23272a&colorB=ff4500&style=for-the-badge">
+	</a>
+	<a href="https://github.com/jorexdeveloper/android-eh/contributors">
+		<img
+			src="https://img.shields.io/github/contributors/jorexdeveloper/android-eh?colorA=23272a&colorB=28a745&style=for-the-badge">
+	</a>
+</p>
 
 User friendly tool to handle and view details of all uncaught exceptions in android applications. An easy way to handle, view, share, and report app crashes quickly on android, with or without any prior developer knowledge.
 
